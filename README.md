@@ -7,7 +7,7 @@ Officially, it is recommended to publish the app for each individual runtime, wh
 
 The solution is to include the following XML in the csproj:
 ```xml
-    <PropertyGroup>
+	<PropertyGroup>
 		<!-- Do not generate the default app host which for Any CPU depends upon the OS where we build - x64 for x64 OS, ARM64 for ARM64 OS -->
 		<UseAppHost>false</UseAppHost>
 	</PropertyGroup>
