@@ -55,4 +55,4 @@ The solution is to include the following XML in the csproj:
 	</None>
 </ItemGroup>
 ```
-Tested in Visual Studio 2022 Version 17.7.4 on Windows 11 ARM64 with NET6 Version 6.0.22.
+Tested in Visual Studio 2022 Version 17.8 on Windows 11 ARM64 with NET8 Version 8.0.0.
