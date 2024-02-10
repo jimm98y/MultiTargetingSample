@@ -33,7 +33,7 @@ namespace MultiTargetingSampleApp
             //processInfo.FileName = "dotnet.exe";
             //processInfo.Arguments = "./MultiTargetingSampleApp.dll";
 
-            string processName = System.Diagnostics.Process.GetCurrentProcess().ProcessName.Replace("_AnyCPU", "");
+            string processName = System.Diagnostics.Process.GetCurrentProcess().ProcessName.Replace("Launcher", "");
             switch (System.Runtime.InteropServices.RuntimeInformation.OSArchitecture)
             {
                 case System.Runtime.InteropServices.Architecture.X86:
@@ -57,7 +57,7 @@ namespace MultiTargetingSampleApp
                         }
                         else
                         {
-                            processInfo.FileName = $"{processName}.exe";
+                            processInfo.FileName = $"{processName}_x64.exe";
                         }
                     }
                     break;

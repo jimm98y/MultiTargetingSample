@@ -13,7 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\MultiTargetingAnyCPULauncher\MultiTargetingSampleApp_AnyCPU.csproj" />
+		<ProjectReference Include="..\MultiTargetingAnyCPULauncher\MultiTargetingSampleAppLauncher.csproj" />
 		<ProjectReference Include="..\SampleLibrary\SampleLibrary.csproj" />
 	</ItemGroup>
 
@@ -42,13 +42,13 @@
 		</PropertyGroup>
 		
 		<!-- Generate hosts per-platform: x64 will be the default app host no matter the OS where we build $(RuntimeFrameworkVersion) -->
-		<CreateAppHost AppHostSourcePath="$(CustomTargetNetSdkx64)\runtimes\win-x64\native\apphost.exe" AppBinaryName="$(AssemblyName).dll" WindowsGraphicalUserInterface="$(CustomUseWindowsGraphicalUserInterface)" AppHostDestinationPath="$(TargetDir)\$(AssemblyName).exe" IntermediateAssembly="$(IntermediateOutputPath)\$(AssemblyName).dll" />
+		<CreateAppHost AppHostSourcePath="$(CustomTargetNetSdkx64)\runtimes\win-x64\native\apphost.exe" AppBinaryName="$(AssemblyName).dll" WindowsGraphicalUserInterface="$(CustomUseWindowsGraphicalUserInterface)" AppHostDestinationPath="$(TargetDir)\$(AssemblyName)_x64.exe" IntermediateAssembly="$(IntermediateOutputPath)\$(AssemblyName).dll" />
 		<CreateAppHost AppHostSourcePath="$(CustomTargetNetSdkx86)\runtimes\win-x86\native\apphost.exe" AppBinaryName="$(AssemblyName).dll" WindowsGraphicalUserInterface="$(CustomUseWindowsGraphicalUserInterface)" AppHostDestinationPath="$(TargetDir)\$(AssemblyName)_x86.exe" IntermediateAssembly="$(IntermediateOutputPath)\$(AssemblyName).dll" />
 		<CreateAppHost AppHostSourcePath="$(CustomTargetNetSdkARM64)\runtimes\win-arm64\native\apphost.exe" AppBinaryName="$(AssemblyName).dll" WindowsGraphicalUserInterface="$(CustomUseWindowsGraphicalUserInterface)" AppHostDestinationPath="$(TargetDir)\$(AssemblyName)_ARM64.exe" IntermediateAssembly="$(IntermediateOutputPath)\$(AssemblyName).dll" />
 	</Target>
 	<ItemGroup>
 		<!-- Include the generated hosts in the publish output -->
-		<None Include="$(TargetDir)\$(AssemblyName).exe">
+		<None Include="$(TargetDir)\$(AssemblyName)_x64.exe">
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 			<Visible>False</Visible>
 			<Link>%(Filename)%(Extension)</Link>
